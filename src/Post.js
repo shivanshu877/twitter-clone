@@ -7,9 +7,10 @@ import RepeatIcon from '@mui/icons-material/Repeat';
 import FavouriteBorderIcon  from '@mui/icons-material/FavoriteBorder';
 import PublishIcon  from '@mui/icons-material/Publish';
 function Post({
-displayName,
+
 username ,
-verified , text , 
+verified , 
+text , 
 image , 
 avatar,
 
@@ -19,21 +20,21 @@ avatar,
   return (
     <div  className="post" > 
     <div className="post_avatar">  
-    <Avatar  src = "https://d31ezp3r8jwmks.cloudfront.net/rrggk40pbkppfi0tas3j73qr4lub">  </Avatar>
+    <Avatar  src = {avatar}>  </Avatar>
      </div>
      <div className="post_body"  > 
       <div  className="post_header " >
   <div className="post_headerText" >   
-  <h3> Shivanshu  <span>
-  <VerifiedUser  className="post_badge" />
+  <h3> {username} <span>
+  {verified && <VerifiedUser  className="post_badge" />}
     </span> </h3>
 
   </div>
   <div  className="post_headerDescription" >
- <p>  Twitter Clone   </p>
+ <p> {text}  </p>
   </div>
       </div>
-     <img  src="https://images.pexels.com/photos/1482061/pexels-photo-1482061.jpeg?auto=compress&cs=tinysrgb&w=1600" ></img> 
+     <img  src={image} ></img> 
      <div  className="post_footer" > 
      <ChatBubbleOutlinedIcon  fontsize="small"  />
      <RepeatIcon  fontsize="small"  /> 
